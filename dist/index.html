@@ -34,10 +34,19 @@
 
     <!-- Theme -->
     <meta name="theme-color" content="#0f172a" />
-    <script type="module" crossorigin src="/assets/index-Bbjf96E5.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-Bx4XKk4q.css">
+    <script type="module" crossorigin src="/assets/index-HPKQyfEo.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-C5WTC0g8.css">
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <div id="loading-fallback" style="background:#0f172a;color:#94a3b8;min-height:100vh;display:flex;align-items:center;justify-content:center;font-family:sans-serif;font-size:1rem;">
+        Loading VoiceyPro...
+      </div>
+    </div>
+    <script>
+      window.addEventListener('error', function(e) {
+        document.getElementById('loading-fallback') && (document.getElementById('loading-fallback').innerHTML = '<div style="color:#f87171;padding:2rem;max-width:600px"><strong>Script Error:</strong><br>' + e.message + '<br><small>' + (e.filename||'') + ':' + (e.lineno||'') + '</small></div>');
+      });
+    </script>
   </body>
 </html>
