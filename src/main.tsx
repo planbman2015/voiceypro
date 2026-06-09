@@ -20,7 +20,8 @@ class ErrorBoundary extends Component<{ children: ReactNode }, { error: Error | 
   }
 }
 
-createRoot(document.getElementById('root')!).render(
+const rootEl = document.getElementById('root')!;
+createRoot(rootEl).render(
   <StrictMode>
     <ErrorBoundary>
       <App />
